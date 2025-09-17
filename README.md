@@ -1,17 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Sourav Alam Prodhan - Video Editor Portfolio
 
-## Getting Started
+This is the source code for the professional portfolio website of Sourav Alam Prodhan, a creative video editor and graphics designer. The site is built with Next.js and Tailwind CSS, showcasing a modern, animated, and responsive design.
 
-First, run the development server:
+**Live Demo:** https://your-deployment-link.com <!-- TODO: Add deployment link -->
+
+<!-- TODO: Add a screenshot, for example: !Portfolio Screenshot -->
+
+## ✨ Features
+
+-   **Stunning Animations:** Smooth page transitions and animations powered by Framer Motion.
+-   **Responsive Design:** Fully responsive layout that looks great on all devices, from mobile to desktop.
+-   **Interactive UI:** Engaging user interface with hover effects and micro-interactions.
+-   **SEO Optimized:** Built with Next.js App Router for optimal search engine visibility.
+-   **Component-Based:** Clean and maintainable code structure using React components.
+
+## 🛠️ Tech Stack
+
+-   **Framework:** Next.js
+-   **Styling:** Tailwind CSS
+-   **Animation:** Framer Motion
+-   **Icons:** Lucide React
+-   **Deployment:** Vercel
+
+## 🚀 Getting Started
+
+First, clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/AbuSayed332/sourav--video-editor-portfolio.git
+cd sourav--video-editor-portfolio
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
