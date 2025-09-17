@@ -111,7 +111,7 @@ export default function About() {
           <FadeInUp delay={400}>
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=800&fit=crop" 
+                src="/images/work.jpg" 
                 alt="Sourav Alam Prodhan at work"
                 className="rounded-xl shadow-2xl w-full h-auto"
                 width={600}

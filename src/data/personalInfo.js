@@ -15,6 +15,7 @@ export const personalInfo = {
   email: "czsourav277@gmail.com",
   phone: "+880 1608833811",
   website: "www.alexmorgan.video",
+  experience: 4,
   
   // Contact Information (structured for components)
   contact: {
