@@ -1,5 +1,6 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
 import Card from '../common/Card'
@@ -9,39 +10,38 @@ export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     if (isAnimating) return
     setIsAnimating(true)
     setTimeout(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
       setIsAnimating(false)
     }, 300)
-  }
+  }, [isAnimating])
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     if (isAnimating) return
     setIsAnimating(true)
     setTimeout(() => {
       setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
       setIsAnimating(false)
     }, 300)
-  }
+  }, [isAnimating])
 
-  const goToTestimonial = (index) => {
+  const goToTestimonial = useCallback((index) => {
     if (isAnimating || index === currentTestimonial) return
     setIsAnimating(true)
     setTimeout(() => {
       setCurrentTestimonial(index)
       setIsAnimating(false)
     }, 300)
-  }
+  }, [isAnimating, currentTestimonial])
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextTestimonial()
-    }, 5000)
+    if (isAnimating) return
+    const interval = setInterval(nextTestimonial, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [isAnimating, nextTestimonial])
 
   if (!testimonials || testimonials.length === 0) {
     return null
@@ -101,14 +101,16 @@ export default function Testimonials() {
 
               {/* Review Text */}
               <blockquote className="text-xl md:text-2xl text-gray-200 mb-8 italic text-center leading-relaxed">
-                "{testimonials[currentTestimonial]?.text}"
+                &quot;{testimonials[currentTestimonial]?.text}&quot;
               </blockquote>
 
               {/* Author Info */}
               <div className="flex items-center justify-center space-x-4">
-                <img 
+                <Image
                   src={testimonials[currentTestimonial]?.avatar} 
                   alt={testimonials[currentTestimonial]?.name}
+                  width={64}
+                  height={64}
                   className="w-16 h-16 rounded-full border-3 border-purple-400 shadow-lg"
                 />
                 <div className="text-center">
@@ -150,9 +152,11 @@ export default function Testimonials() {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex items-center mb-4">
-                  <img 
+                  <Image
                     src={testimonial.avatar} 
                     alt={testimonial.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full mr-4 border-2 border-purple-400"
                   />
                   <div>
@@ -166,7 +170,7 @@ export default function Testimonials() {
                   ))}
                 </div>
                 <p className="text-gray-300 text-sm italic">
-                  "{testimonial.text.length > 100 ? `${testimonial.text.slice(0, 100)}...` : testimonial.text}"
+                  &quot;{testimonial.text.length > 100 ? `${testimonial.text.slice(0, 100)}...` : testimonial.text}&quot;
                 </p>
               </Card>
             ))}

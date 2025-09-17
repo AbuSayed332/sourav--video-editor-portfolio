@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { Play, ExternalLink } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
 import Card from '../common/Card'
@@ -50,11 +51,12 @@ export default function Portfolio() {
               className={`group bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 animate-fade-in-up`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="relative overflow-hidden">
-                <img 
+              <div className="relative h-48 overflow-hidden">
+                <Image
                   src={item.thumbnail} 
                   alt={item.title} 
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Overlay */}

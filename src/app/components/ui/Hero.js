@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { ArrowDown } from 'lucide-react'
 import Button from '../common/Button'
 import FadeInUp from '../animations/FadeInUp'
@@ -41,10 +42,12 @@ export default function Hero() {
       <div className="text-center max-w-4xl mx-auto px-4 relative z-10">
         <FadeInUp delay={0}>
           <div className="mb-8">
-            <img 
+            <Image 
               src="/images/sourav.jpg" 
-              alt="Alex Creative Profile" 
+              alt="Sourav Alam Prodhan Profile" 
               className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-purple-400 shadow-2xl animate-float"
+              width={128}
+              height={128}
             />
           </div>
         </FadeInUp>

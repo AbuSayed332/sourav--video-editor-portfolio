@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { Award, Users, Clock, Star, Download } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
 import Button from '../common/Button'
@@ -100,7 +101,7 @@ export default function About() {
                     element?.scrollIntoView({ behavior: 'smooth' })
                   }}
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </Button>
               </div>
             </FadeInUp>
@@ -109,10 +110,12 @@ export default function About() {
           {/* Image */}
           <FadeInUp delay={400}>
             <div className="relative">
-              <img 
+              <Image
                 src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=800&fit=crop" 
-                alt="Alex Creative at work" 
+                alt="Sourav Alam Prodhan at work"
                 className="rounded-xl shadow-2xl w-full h-auto"
+                width={600}
+                height={800}
               />
               
               {/* Experience Badge */}
