@@ -2,7 +2,7 @@
 
 This is the source code for the professional portfolio website of Sourav Alam Prodhan, a creative video editor and graphics designer. The site is built with Next.js and Tailwind CSS, showcasing a modern, animated, and responsive design.
 
-**Live Demo:** [https://your-deployment-link.com](https://souravalam.netlify.app/) <!-- TODO: Add deployment link -->
+**Live Demo:** [(https://souravalam.netlify.app/)] <!-- TODO: Add deployment link -->
 
 <!-- TODO: Add a screenshot, for example: !Portfolio Screenshot -->
 
