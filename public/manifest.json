@@ -1,0 +1,22 @@
+{
+  "name": "Sourav Alam Prodhan - Video Editor Portfolio",
+  "short_name": "Sourav's Portfolio",
+  "description": "Professional video editing and graphics design portfolio showcasing creative work and expertise.",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#a855f7",
+  "background_color": "#111827",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
