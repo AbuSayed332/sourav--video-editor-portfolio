@@ -20,7 +20,7 @@ export const metadata = {
     siteName: 'Sourav Alam Prodhan Portfolio',
     images: [
       {
-        url: '/og-image.png', // Should be in /public/og-image.png
+        url: '/icon.png', // Should be in /public/og-image.png
         width: 1200,
         height: 630,
         alt: 'Sourav Alam Prodhan Portfolio',
@@ -37,7 +37,7 @@ export const metadata = {
     images: ['/twitter-image.png'], // Should be in /public/twitter-image.png
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
