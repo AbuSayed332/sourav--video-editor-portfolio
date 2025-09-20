@@ -51,7 +51,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       {/* In Next.js App Router, <head> is automatically managed via the metadata object. */}
       <body className={`${inter.className} bg-gray-900 text-gray-100 antialiased`}>
         {/* The wrapping <div id="root"> is not necessary in the App Router. */}

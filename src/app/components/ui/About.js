@@ -1,4 +1,5 @@
 'use client'
+import React from 'react';
 import Image from 'next/image'
 import { Award, Users, Clock, Star, Download } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
@@ -34,11 +35,23 @@ export default function About() {
     }
   ]
 
-  const handleDownloadCV = () => {
-    // In a real app, this would trigger a file download
-    console.log('Downloading CV...')
-    alert('CV download feature would be implemented here')
-  }
+  // const handleDownloadCV = () => {
+  //   // In a real app, this would trigger a file download
+  //   console.log('Downloading CV...')
+    
+  //   alert('CV download feature would be implemented here')
+  // }
+const handleDownloadCV = () => {
+  // This function assumes you have a CV file named 'sourav-alam-prodhan-cv.pdf'
+  // placed in the `/public` directory of your project.
+  const cvUrl = '/sourav-alam-prodhan-cv.pdf';
+  const link = document.createElement('a');
+  link.href = cvUrl;
+  link.download = 'sourav-alam-prodhan-cv.pdf'; // This is the filename the user will see.
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <section id="about" className="py-20 bg-gray-800">
@@ -56,17 +69,11 @@ export default function About() {
 
             <FadeInUp delay={200}>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                {personalInfo.bio.paragraph1}
+                {personalInfo.bio.long}
               </p>
             </FadeInUp>
 
             <FadeInUp delay={400}>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                {personalInfo.bio.paragraph2}
-              </p>
-            </FadeInUp>
-            
-            <FadeInUp delay={600}>
               <div className="grid grid-cols-2 gap-6 mb-8">
                 {achievements.map((achievement, index) => (
                   <div 
@@ -83,7 +90,7 @@ export default function About() {
               </div>
             </FadeInUp>
 
-            <FadeInUp delay={800}>
+            <FadeInUp delay={600}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   variant="primary" 
@@ -120,7 +127,7 @@ export default function About() {
               
               {/* Experience Badge */}
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-pink-600 p-6 rounded-xl shadow-lg">
-                <p className="text-2xl font-bold text-white">{personalInfo.experience}+ Years</p>
+                <p className="text-2xl font-bold text-white">{personalInfo.stats.yearsExperience}+ Years</p>
                 <p className="text-purple-200">Experience</p>
               </div>
 
