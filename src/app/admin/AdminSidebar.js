@@ -86,7 +86,7 @@ export default function AdminSidebar() {
               <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Admin Panel
               </h1>
-              <p className="text-gray-400 text-sm">Alex Creative</p>
+              <p className="text-gray-400 text-sm">En Sayed</p>
             </div>
           )}
           <button
